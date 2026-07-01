@@ -1,0 +1,452 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Premium Wellness Sanctuary Palette */
+  --bg-primary: #FFF9F5;       /* Cream */
+  --bg-secondary: #FEFCFA;     /* Warm White */
+  --border-subtle: #E7D8CC;    /* Soft Warm Edge */
+  
+  --text-title: #5A4A42;       /* Warm Brown */
+  --text-body: #725E54;        /* Soft Slate-Brown */
+  --text-muted: #8B766C;       /* Muted Brown */
+
+  /* Accents & Highlights */
+  --brand-primary: #D98C6B;    /* Muted Terracotta */
+  --brand-success: #B8C9A3;    /* Sage Green */
+  --brand-warning: #F7D8C5;    /* Soft Peach */
+  --brand-danger: #E29382;     /* Coral / Rose */
+  --accent-lavender: #CFC8E8;  /* Dusty Lavender */
+  
+  /* Font defaults */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+}
+
+@keyframes floatBlobs {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 50%;
+  }
+  50% {
+    background-position: 25% 75%, 75% 25%, 35% 65%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  /* Slow moving pastel blobs for a calming background sanctuary effect */
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(247, 216, 197, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(184, 201, 163, 0.35) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(207, 200, 232, 0.3) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: floatBlobs 24s ease-in-out infinite;
+  background-attachment: fixed;
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary);
+}
+
+/* Reusable Floating Cards - Soft Shadows & rounded-3xl */
+.glass-panel {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 24px !important;
+  box-shadow: 
+    0 12px 32px -4px rgba(90, 74, 66, 0.03),
+    0 4px 10px -2px rgba(90, 74, 66, 0.02) !important;
+}
+
+.glass-panel-light {
+  background: rgba(254, 252, 250, 0.75) !important;
+  border: 1px solid rgba(245, 236, 229, 0.5) !important;
+  border-radius: 20px !important;
+}
+
+/* Text Gradient (Soft Terracotta to Muted Brown) */
+.text-gradient {
+  background: linear-gradient(135deg, #D98C6B 30%, #5A4A42 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Brand Accent Gradient (Soft Terracotta to Pastel Peach) */
+.brand-gradient {
+  background: linear-gradient(135deg, #D98C6B 0%, #F7D8C5 100%) !important;
+}
+
+/* Custom premium hover scale animation */
+.hover-premium {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-premium:hover {
+  transform: translateY(-6px);
+  border-color: rgba(217, 140, 107, 0.25) !important;
+  box-shadow: 0 16px 44px rgba(90, 74, 66, 0.06) !important;
+}
+
+/* Keyframes for smooth animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes emojiBounce {
+  0%   { transform: translateY(0) scale(1); }
+  40%  { transform: translateY(-7px) scale(1.12); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(8px, -10px) scale(1.04); }
+  66%  { transform: translate(-6px, 8px) scale(0.98); }
+}
+
+@keyframes floatOrbSlow {
+  0%, 100% { transform: translate(0, 0); }
+  50%  { transform: translate(-10px, -14px); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bounce-emoji {
+  animation: emojiBounce 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+.animate-float {
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatOrbSlow 12s ease-in-out infinite;
+}
+
+/* -------------------------------------------------------------
+   TAILWIND UTILITY OVERRIDES FOR LIGHT THEME ADAPTATION
+   ------------------------------------------------------------- */
+
+/* Text headings - Force warm dark charcoal-brown */
+.text-slate-800, .text-slate-900, .text-slate-850, .text-slate-750, .text-slate-700, .text-slate-800\/90 {
+  color: var(--text-title) !important;
+}
+
+/* Text body - Force muted slate-brown */
+.text-slate-600, .text-slate-650, .text-slate-500, .text-slate-700\/80 {
+  color: var(--text-body) !important;
+}
+
+/* Text subtext / timestamps - Force warm muted grey */
+.text-slate-400, .text-slate-450 {
+  color: var(--text-muted) !important;
+}
+
+/* Background panels - Force white floating */
+.bg-white, .bg-white\/50, .bg-white\/60, .bg-white\/75, .bg-white\/80 {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+/* Background inputs / inner containers - Force soft warm light cream */
+.bg-slate-50, .bg-slate-100, .bg-slate-100\/80, .bg-slate-100\/60, .bg-slate-200\/20, .bg-brand-50\/20, .bg-brand-50\/30 {
+  background-color: #F5ECE5 !important;
+}
+
+/* Border lines - Force soft warm border */
+.border-slate-100, .border-slate-200, .border-slate-200\/60, .border-slate-200\/70, .border-slate-200\/80, .border-slate-250\/60, .border-slate-300, .border-brand-100, .border-brand-100\/50, .border-brand-100\/60 {
+  border-color: var(--border-subtle) !important;
+}
+
+/* Focus and input states */
+input:focus, textarea:focus, select:focus {
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 0 0 3px rgba(217, 140, 107, 0.15) !important;
+}
+
+/* Hardcoded dark element overrides for other sanctuary pages */
+.bg-\[\#13121C\],
+.bg-\[\#13121C\]\/30,
+.bg-\[\#13121C\]\/40,
+.bg-\[\#13121C\]\/50,
+.bg-\[\#13121C\]\/80 {
+  background-color: #F5ECE5 !important;
+}
+
+.border-\[\#222030\] {
+  border-color: var(--border-subtle) !important;
+}
+
+.text-slate-100,
+.text-slate-200,
+.text-slate-250 {
+  color: var(--text-title) !important;
+}
+
+.text-slate-350,
+.text-slate-400,
+.text-slate-500 {
+  color: var(--text-muted) !important;
+}
+
+/* Input placeholder text and dropdown visibility styling */
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.65;
+}
+
+select {
+  background-color: #FFFDFB !important;
+  color: var(--text-body) !important;
+}
+
+option {
+  background-color: #FFFFFF !important;
+  color: var(--text-body) !important;
+}
+
+/* Progress indicator animation overrides */
+svg circle {
+  transition: stroke-dashoffset 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Audited dark theme remnants overrides */
+.bg-white\/5 {
+  background-color: var(--bg-primary) !important;
+}
+
+.bg-white\/10 {
+  background-color: var(--brand-warning) !important;
+}
+
+.border-slate-200\/5 {
+  border-color: var(--border-subtle) !important;
+}
+
+.bg-slate-800\/10 {
+  background-color: var(--border-subtle) !important;
+}
+
+.text-slate-300 {
+  color: var(--text-body) !important;
+}
+
+.bg-slate-800 {
+  background-color: var(--border-subtle) !important;
+}
+
+/* Tooltip container for contribution grid */
+.journey-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.journey-tooltip .journey-tooltiptext {
+  visibility: hidden;
+  width: 196px;
+  background-color: #3D2E28;
+  color: #FEFCFA;
+  text-align: left;
+  border-radius: 12px;
+  padding: 10px 12px;
+  position: absolute;
+  z-index: 50;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: 0 10px 28px rgba(60, 44, 40, 0.25);
+  pointer-events: none;
+  line-height: 1.45;
+}
+.journey-tooltip .journey-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #3D2E28 transparent transparent transparent;
+}
+.journey-tooltip:hover .journey-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -3px);
+}
+
+/* Cell hover scale */
+.journey-cell {
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+.journey-cell:hover {
+  transform: scale(1.22);
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(217, 140, 107, 0.30);
+}
+
+/* Page fade in */
+.page-fade-in {
+  animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button compressions */
+.btn-compress {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-compress:active {
+  transform: scale(0.95) !important;
+}
+
+/* Custom scroll transitions */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------
+   MOOD SLIDER — Custom terracotta / cream range input
+   ------------------------------------------------------- */
+.mood-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #F5ECE5;
+  border-radius: 999px;
+  outline: none;
+  border: 1px solid #E7D8CC;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+/* Webkit thumb (Chrome, Safari, Edge) */
+.mood-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #D98C6B;
+  border: 3px solid #FEFCFA;
+  box-shadow: 0 2px 10px rgba(217, 140, 107, 0.40);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mood-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+  box-shadow: 0 4px 16px rgba(217, 140, 107, 0.55);
+}
+.mood-slider::-webkit-slider-thumb:active {
+  transform: scale(1.05);
+  background: #c97d5a;
+}
+
+/* Firefox thumb */
+.mood-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #D98C6B;
+  border: 3px solid #FEFCFA;
+  box-shadow: 0 2px 10px rgba(217, 140, 107, 0.40);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mood-slider::-moz-range-thumb:hover {
+  transform: scale(1.18);
+}
+
+/* Firefox track */
+.mood-slider::-moz-range-track {
+  background: #F5ECE5;
+  height: 8px;
+  border-radius: 999px;
+}
+
+/* Focus ring */
+.mood-slider:focus {
+  border-color: #D98C6B !important;
+  box-shadow: 0 0 0 3px rgba(217, 140, 107, 0.18) !important;
+}
+
+/* -------------------------------------------------------
+   HOVER LIFT — 250ms card lift utility
+   ------------------------------------------------------- */
+.hover-lift {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(90, 74, 66, 0.10) !important;
+  border-color: rgba(217, 140, 107, 0.30) !important;
+}
+
+/* -------------------------------------------------------
+   SECTION spacing helpers for mood tracker page
+   ------------------------------------------------------- */
+.mood-section {
+  padding: 52px;
+  border-radius: 32px;
+}
+
+@media (max-width: 768px) {
+  .mood-section {
+    padding: 28px;
+    border-radius: 24px;
+  }
+}
+

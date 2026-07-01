@@ -1,0 +1,34 @@
+# Tasks: THRYVE Sanctuary Final Premium Redesign
+
+- [x] **Phase 1: Global Style Polish & Micro-interactions**
+  - [x] Refactor variables and floating background animations in `index.css`.
+  - [x] Add tooltips, scale-click, and fade animations.
+  - [x] Polish core reusable components: `Button.jsx` and `Card.jsx`.
+- [x] **Phase 2: Handcrafted SVG Illustrations**
+  - [x] Create `Illustrations.jsx` with Sunrise, Reading, Meditation, Leaves, Flowers, Journal, Breathing, Forest, Mountains, Moon, Community, Plant, Rain, Tea, Clouds.
+- [x] **Phase 3: Rebuilding the Narrative Dashboard (`Dashboard.jsx`)**
+  - [x] Hero Banner: Greetings + Quote + Mind Weather.
+  - [x] Daily Check-in Card: Integrated quick mood, notes, journal, breathing trigger.
+  - [x] Mood Journey Calendar: Grid, streaks, logs count, consistency %, milestones, emotional insights.
+  - [x] Wellness Snapshot: Circular progress rings.
+  - [x] Continue Your Journey: 3 cards with custom SVGs.
+  - [x] AI Insight of the Day.
+  - [x] Community Support section (2 posts).
+  - [x] Moments of Calm sound loops horizontal strip.
+  - [x] Gratitude text box.
+- [x] **Phase 4: Global Page Audit & Consistency Overhaul**
+  - [x] Rename navigation links and sidebar sections to follow emotional naming standards (e.g. Your Sanctuary, Moments of Calm).
+  - [x] Audit Login / Register pages (minimal centered layouts with illustrations).
+  - [x] Audit Mood Tracker page (slider styling, logs, statistics).
+  - [x] Audit Journal page (layout, calendar, entry list, forms).
+  - [x] Audit AI Companion / Chat page (bubbles contrast, scrolling, inputs).
+  - [x] Audit Habits page (streaks, check-ins, calendar, lists).
+  - [x] Audit Resources page (calming sounds layout).
+  - [x] Audit Community Feed page (posting form, cards, filtering tabs).
+  - [x] Audit Insights page (calming chart stylings, visual consistency).
+  - [x] Audit Settings page (clean alignment).
+- [x] **Phase 5: Verification & Walkthrough**
+  - [x] Verify frontend compiles successfully (`npm run build`).
+  - [x] Run browser subagent to verify visual aesthetic and click flows.
+  - [x] Capture final visual confirmations.
+  - [x] Document changes in `walkthrough.md`.
