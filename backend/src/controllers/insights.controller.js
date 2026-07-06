@@ -490,7 +490,7 @@ export const getInsightsRecommendations = asyncHandler(async (req, res) => {
   let parsedAIResponse = null;
 
   try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const prompt = `You are the THRYVE AI insights engine. Your role is to analyze a user's mood logs and journal logs over the past month, and generate supportive, empathetic, and actionable wellness suggestions.
 
 Input logs to analyze:

@@ -52,7 +52,7 @@ Important Boundaries:
 const generateTitleFromMessage = async (genAI, userMessage) => {
   try {
     const prompt = `Based on this user request, generate a short, empathetic mental wellness conversation title (3 to 8 words). Return only the title text, with no quote marks, markdown, or extra explanations.\n\nUser request: "${userMessage}"`;
-    const titleModel = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const titleModel = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const result = await titleModel.generateContent(prompt);
     let title = result.response.text().trim();
     title = title.replace(/^["'“”‘`]|["'“”’`]$/g, '').trim();
@@ -167,7 +167,7 @@ Let me know if there's anything else you'd like to talk about.`;
 
     try {
       const model = genAI.getGenerativeModel({
-        model: 'gemini-1.5-flash',
+        model: 'gemini-2.5-flash',
         systemInstruction: SYSTEM_INSTRUCTION,
       });
 

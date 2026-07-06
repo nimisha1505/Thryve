@@ -86,7 +86,7 @@ THRYVE provides a safe, calming, and aesthetic digital workspace designed to hel
 
 ## AI Features
 
-The platform integrates Google Gemini API (`gemini-1.5-flash`) via the official `@google/generative-ai` package:
+The platform integrates Google Gemini API (`gemini-2.5-flash`) via the official `@google/generative-ai` package:
 - **Reflection-Aware Conversations**: Listens empathetically and guides users using non-judgmental prompts and mindfulness routines.
 - **Smart System Prompts**: Instructed with clear system constraints, explicitly clarifying it is an AI companion (not a licensed medical professional) and directing users away from clinical diagnoses.
 - **Crisis Protection Guard**: Scans incoming inputs against crisis indicators (e.g., self-harm, suicidal ideation) and bypasses AI generation to immediately serve direct crisis hotline references (988 US/Canada, Samaritans UK, India support options).
@@ -136,7 +136,7 @@ THRYVE enforces robust API security protocols:
 - **Object Modeling**: Mongoose ODM
 
 ### AI Integration
-- **Engine**: Google Gemini AI (`gemini-1.5-flash`)
+- **Engine**: Google Gemini AI (`gemini-2.5-flash`)
 - **SDK**: `@google/generative-ai`
 
 ---

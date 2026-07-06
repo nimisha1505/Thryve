@@ -540,7 +540,7 @@ export const getSmartHabitSuggestions = asyncHandler(async (req, res) => {
   // If online, use Gemini
   const genAI = new GoogleGenerativeAI(apiKey);
   try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     const moodSummary = moodLogs.map(m => `Score: ${m.moodScore}, Tags: ${m.moodTags.join(', ')}`).join('\n');
     const journalSummary = journals.map(j => `Category: ${j.category}, Tag: ${j.moodTag}, Title: ${j.title}`).join('\n');
