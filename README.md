@@ -21,7 +21,7 @@ Access the live production instances of the THRYVE platform using the links belo
 | Service | Platform | URL |
 | :--- | :--- | :--- |
 | **Frontend Web App** | Vercel | [https://thryve-tau.vercel.app](https://thryve-tau.vercel.app) |
-| **Backend REST API** | Render | [https://thryve-wellness-backend.onrender.com](https://thryve-wellness-backend.onrender.com) |
+| **Backend REST API** | Render | [https://thryve-backend-e8qn.onrender.com](https://thryve-backend-e8qn.onrender.com) |
 | **GitHub Repository** | GitHub | [https://github.com/nimisha1505/Thryve](https://github.com/nimisha1505/Thryve) |
 
 ---
